@@ -1,0 +1,33 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<graphics.h>
+#include<dos.h>
+#include<math.h>
+#include<conio.h>
+
+int main()
+{
+int gd=DETECT,gm;
+initgraph(&gd,&gm,"");
+int xr=300,yr=300,r,g=1,i,x=10,y=10;
+int x1=100,y1=100,x2=150,y2=200,x3=250,y3=300;
+r=(3.14*g)/180;
+for(i=100;i<200;i++)
+{
+	x1 = xr+(x-xr)*cos(r)-(y-yr)*sin(r);
+	y1 = xr+(x-xr)*sin(r)+(y-yr)*cos(r);
+
+	line(x1,y1,x2,y2);
+	line(x2,y2,x3,y3);
+	line(x3,y3,x1,y1);
+	delay(30);
+}
+getch();
+cleardevice();
+closegraph();
+
+return 0;
+}
+
+
+	
